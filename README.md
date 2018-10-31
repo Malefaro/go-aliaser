@@ -30,3 +30,10 @@ go get github.com/malefaro/go-aliaser
 
 `go-aliaser rm <name>`
 
+## Note:
+
+Aliases will be fully working after logout-login
+
+To activate aliases in current terminal immidiatly use
+
+`source ~/.profile`
