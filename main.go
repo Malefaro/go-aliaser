@@ -42,7 +42,7 @@ func WriteJSONFile(m map[string]string) error {
 
 func AddProfileFile() error {
 
-	data , err := ioutil.ReadFile(HOME+"/.profile")
+	data , err := ioutil.ReadFile(HOME+"/.bashrc")
 	if err != nil {
 		fmt.Println(err)
 		return err
@@ -57,7 +57,7 @@ fi
 		return nil
 	}
 	
-	f, err := os.OpenFile(HOME+"/.profile", os.O_APPEND | os.O_WRONLY, 0700) 
+	f, err := os.OpenFile(HOME+"/.bashrc", os.O_APPEND | os.O_WRONLY, 0700) 
 	if err != nil {
 		fmt.Println(err)
 		return err
@@ -143,6 +143,11 @@ func RemoveAlias(name string) error {
 	return nil
 }
 
+func AddFunction(str string) error{
+	name, fun := strings.SplitN(str, " ", 2)
+	
+}
+
 // func ExecCmd() {
 // 	// path := HOME + "/.profile"
 // 	// c := "source " + path
@@ -171,6 +176,12 @@ func main() {
 	case "rm":
 		err := RemoveAlias(os.Args[2])
 		if err != nil {
+			fmt.Println(err)
+			return
+		}
+	case "function":
+		err := AddFunction(os.Args[2])
+		if err != nil{
 			fmt.Println(err)
 			return
 		}

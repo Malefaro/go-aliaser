@@ -12,7 +12,7 @@ This app create two files:
 * `$HOME/.go-aliaser-map`
 
 
-And add your `$HOME/.profile` file to include `$HOME/.go-aliaser`, which contains aliases
+And add your `$HOME/.bashrc` file to include `$HOME/.go-aliaser`, which contains aliases
 
 `$HOME/.go-aliaser-map` - JSON file with aliases
 
@@ -29,11 +29,3 @@ go get github.com/malefaro/go-aliaser
 #### Remove 
 
 `go-aliaser rm <name>`
-
-## Note:
-
-Aliases will be fully working after logout-login
-
-To activate aliases in current terminal immidiatly use
-
-`source ~/.profile`
