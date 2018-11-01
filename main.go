@@ -143,10 +143,10 @@ func RemoveAlias(name string) error {
 	return nil
 }
 
-func AddFunction(str string) error{
-	name, fun := strings.SplitN(str, " ", 2)
+// func AddFunction(str string) error{
+// 	name, fun := strings.SplitN(str, " ", 2)
 	
-}
+// }
 
 // func ExecCmd() {
 // 	// path := HOME + "/.profile"
@@ -179,25 +179,14 @@ func main() {
 			fmt.Println(err)
 			return
 		}
-	case "function":
-		err := AddFunction(os.Args[2])
-		if err != nil{
-			fmt.Println(err)
-			return
-		}
+	// case "function":
+	// 	err := AddFunction(os.Args[2])
+	// 	if err != nil{
+	// 		fmt.Println(err)
+	// 		return
+	// 	}
 	default:
 		fmt.Println("usage: go-aliaser <create|rm> <name>[=<command>]")
 		return 
 	}
-
-	// filename := HOME + "/" + mapfile
-	// m, err := ReadFile(filename)
-	// if err != nil {
-	// 	fmt.Println(err)
-	// 	return
-	// }
-	// fmt.Println(m)
-	// m["lol"] = "check"
-	// res, _ := json.Marshal(&m)
-	// ioutil.WriteFile(filename, res, 0700)
 }
